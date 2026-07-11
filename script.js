@@ -36,7 +36,7 @@ document.getElementById("checkBtn").onclick=function(){
 
     if(code===""){
         document.getElementById("result").innerHTML =
-        "اكتب الكود أولاً";
+        "اكتب رقم الدعوة أولاً";
         return;
     }
 
@@ -65,7 +65,7 @@ function checkCode(code){
             document.getElementById("result").innerHTML =
             "✅ تم التحقق<br><br>" +
             "الاسم: " + data.name +
-            "<br>المرافقين: " + data.guests;
+            "<br>الحالة: " + data.state;
 
         }else{
 
@@ -76,7 +76,7 @@ function checkCode(code){
 
 
     })
-    .catch(()=>{
+    .catch(error=>{
 
         document.getElementById("result").innerHTML =
         "حدث خطأ في الاتصال";
