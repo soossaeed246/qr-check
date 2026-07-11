@@ -14,17 +14,27 @@ document.getElementById("scanBtn").onclick = function(){
         },
         (decodedText)=>{
 
-            document.getElementById("code").value = decodedText;
+            let code = decodedText;
+
+            // استخراج رقم الدعوة من الرابط
+            if(decodedText.includes("code=")){
+                code = decodedText.split("code=")[1];
+            }
+
+            document.getElementById("code").value = code;
 
             scanner.stop();
 
-            checkCode(decodedText);
+            checkCode(code);
         }
     )
     .catch(err=>{
+
         document.getElementById("result").innerHTML =
         "تعذر تشغيل الكاميرا";
+
     });
+
 };
 
 
@@ -34,13 +44,18 @@ document.getElementById("checkBtn").onclick=function(){
     let code =
     document.getElementById("code").value.trim();
 
+
     if(code===""){
+
         document.getElementById("result").innerHTML =
         "اكتب رقم الدعوة أولاً";
+
         return;
     }
 
+
     checkCode(code);
+
 };
 
 
@@ -56,30 +71,39 @@ function checkCode(code){
         "?code=" +
         encodeURIComponent(code)
     )
+
     .then(res=>res.json())
+
     .then(data=>{
 
 
         if(data.status==="ok"){
 
+
             document.getElementById("result").innerHTML =
             "✅ تم التحقق<br><br>" +
             "الاسم: " + data.name +
-            "<br>الحالة: " + data.state;
+            "<br>المرافقين: " + (data.guests || "");
+
 
         }else{
 
+
             document.getElementById("result").innerHTML =
             "❌ الدعوة غير موجودة";
+
 
         }
 
 
     })
+
     .catch(error=>{
+
 
         document.getElementById("result").innerHTML =
         "حدث خطأ في الاتصال";
+
 
     });
 
