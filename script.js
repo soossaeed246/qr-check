@@ -60,6 +60,7 @@ document.getElementById("checkBtn").onclick=function(){
 
 
 
+
 function checkCode(code){
 
     document.getElementById("result").innerHTML =
@@ -80,10 +81,17 @@ function checkCode(code){
         if(data.status==="ok"){
 
 
+            fetch(
+                SCRIPT_URL +
+                "?action=checkIn&code=" +
+                encodeURIComponent(code)
+            );
+
+
             document.getElementById("result").innerHTML =
-            "✅ تم التحقق<br><br>" +
+            "✅ تم الدخول<br><br>" +
             "الاسم: " + data.name +
-            "<br>المرافقين: " + (data.guests || "");
+            "<br>الحالة: تم الدخول";
 
 
         }else{
