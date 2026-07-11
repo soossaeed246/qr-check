@@ -18,8 +18,8 @@ document.getElementById("scanBtn").onclick = function(){
 
             // استخراج رقم الدعوة من الرابط
             if(decodedText.includes("code=")){
-                code = decodedText.split("code=")[1];
-            }
+    code = decodedText.split("code=")[1].split("&")[0];
+}
 
             document.getElementById("code").value = code;
 
