@@ -91,7 +91,7 @@ body{
 
 #countdown{
     font-size:22px;
-    color:#d4af37;
+    color:#C9A227;
 }
 
 p{
@@ -99,11 +99,11 @@ p{
     color:#555;
 }
 h1{
-    color:#d4af37 !important;
+    color:#C9A227 !important;
     font-size:28px !important;
 }
 #countdownBox h1{
-    color:#d4af37;
+    color:#C9A227;
 }
 
 #countdownBox p{
@@ -120,7 +120,7 @@ h1{
 }
 
 button{
-    background:#d4af37;
+    background:#C9A227;
 }
 
 button:hover{
@@ -161,11 +161,11 @@ h1,
 #countdown,
 button,
 .warning{
-    color:#d4af37 !important;
+    color:#C9A227 !important;
 }
 
 button{
-    background:#d4af37 !important;
+    background:#C9A227 !important;
     color:white !important;
 }
 
