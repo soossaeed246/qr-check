@@ -196,7 +196,7 @@ encodeURIComponent(code)
 
 
 document.getElementById("result").innerHTML =
-"✅ تم الدخول<br><br>"+
+"<div class='success'>✅ تم الدخول</div><br>"
 "الاسم: "+data.name;
 
 
@@ -208,7 +208,7 @@ else if(data.status==="used"){
 
 
 document.getElementById("result").innerHTML =
-"⚠️ تم الدخول مسبقًا<br><br>"+
+"<div class='warning'>⚠️ تم الدخول مسبقًا</div><br>"
 "الاسم: "+data.name+
 "<br>وقت الدخول: "+
 new Date(data.time).toLocaleString("ar-SA");
@@ -221,7 +221,7 @@ else{
 
 
 document.getElementById("result").innerHTML =
-"❌ الدعوة غير موجودة";
+"<div class='error'>❌ الدعوة غير موجودة</div>"
 
 
 }
