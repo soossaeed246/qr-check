@@ -62,3 +62,39 @@ button:hover{
     display:block;
     margin:15px auto;
 }
+body{
+    background:#faf7f2;
+}
+
+.container{
+    max-width:420px;
+    margin:30px auto;
+    background:white;
+    padding:25px;
+    border-radius:20px;
+    box-shadow:0 4px 20px rgba(0,0,0,.15);
+}
+
+.invitation{
+    width:200px;
+    max-width:90%;
+    border-radius:15px;
+    margin:10px auto 20px;
+}
+
+#countdownBox{
+    background:#fff8ee;
+    padding:15px;
+    border-radius:15px;
+    margin-top:15px;
+}
+
+#countdown{
+    font-size:22px;
+    color:#8b5e3c;
+}
+
+p{
+    font-size:18px;
+    color:#555;
+}
