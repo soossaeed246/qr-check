@@ -157,3 +157,18 @@ button:hover{
     border-radius:15px;
     margin-top:20px;
 }
+h1,
+#countdown,
+button,
+.warning{
+    color:#d4af37 !important;
+}
+
+button{
+    background:#d4af37 !important;
+    color:white !important;
+}
+
+#countdownBox{
+    border:2px solid #d4af37;
+}
