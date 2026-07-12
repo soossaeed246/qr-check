@@ -126,3 +126,33 @@ button{
 button:hover{
     background:#6f472d;
 }
+#result{
+    margin-top:20px;
+    padding:15px;
+    border-radius:15px;
+    background:#fff8ee;
+    line-height:1.8;
+}
+
+/* رسالة النجاح */
+.success{
+    color:green;
+}
+
+/* الدخول المسبق */
+.warning{
+    color:#b26a00;
+}
+
+/* الخطأ */
+.error{
+    color:#b00020;
+}
+
+
+#closedBox{
+    background:#fff8ee;
+    padding:20px;
+    border-radius:15px;
+    margin-top:20px;
+}
