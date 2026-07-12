@@ -55,10 +55,10 @@ button:hover{
     font-weight:bold;
 }
 .invitation{
-    width:100%;
-    max-width:420px;
+    width:280px;
+    max-width:90%;
     height:auto;
     border-radius:15px;
     display:block;
-    margin:0 auto 20px;
+    margin:15px auto;
 }
