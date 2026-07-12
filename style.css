@@ -91,7 +91,7 @@ body{
 
 #countdown{
     font-size:22px;
-    color:#8b5e3c;
+    color:#d4af37;
 }
 
 p{
@@ -99,11 +99,11 @@ p{
     color:#555;
 }
 h1{
-    color:#8b5e3c !important;
+    color:#d4af37 !important;
     font-size:28px !important;
 }
 #countdownBox h1{
-    color:#8b5e3c;
+    color:#d4af37;
 }
 
 #countdownBox p{
@@ -120,7 +120,7 @@ h1{
 }
 
 button{
-    background:#8b5e3c;
+    background:#d4af37;
 }
 
 button:hover{
