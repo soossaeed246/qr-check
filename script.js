@@ -16,10 +16,9 @@ document.getElementById("scanBtn").onclick = function(){
 
             let code = decodedText;
 
-            // استخراج رقم الدعوة من الرابط
             if(decodedText.includes("code=")){
-    code = decodedText.split("code=")[1].split("&")[0];
-}
+                code = decodedText.split("code=")[1].split("&")[0];
+            }
 
             document.getElementById("code").value = code;
 
@@ -60,7 +59,6 @@ document.getElementById("checkBtn").onclick=function(){
 
 
 
-
 function checkCode(code){
 
     document.getElementById("result").innerHTML =
@@ -94,7 +92,21 @@ function checkCode(code){
             "<br>الحالة: تم الدخول";
 
 
-        }else{
+        }
+
+        else if(data.status==="used"){
+
+
+            document.getElementById("result").innerHTML =
+            "⚠️ تم الدخول مسبقًا<br><br>" +
+            "الاسم: " + data.name +
+            "<br>وقت الدخول: " +
+            new Date(data.time).toLocaleString("ar-SA");
+
+
+        }
+
+        else{
 
 
             document.getElementById("result").innerHTML =
