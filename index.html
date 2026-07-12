@@ -1,45 +1,106 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
+
 <head>
+
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<title>التحقق من الدعوة</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>التحقق من الدعوات</title>
 
 <link rel="stylesheet" href="style.css">
 
 <script src="https://unpkg.com/html5-qrcode"></script>
+
 </head>
+
 
 <body>
 
+
 <div class="container">
+
+
+<img src="invitation.jpg" class="invitation">
+
+
+<div id="countdownBox">
+
+<h1>🌹 مرحبًا بكم 🌹</h1>
+
+<p>
+سيتم فتح التحقق من الدعوات عند بدء استقبال الضيوف.
+</p>
+
+
+<h2 id="countdown">
+جاري حساب الوقت...
+</h2>
+
+
+</div>
+
+
+
+<div id="checkBox">
+
 
 <h1>التحقق من الدعوة</h1>
 
+
 <div id="reader"></div>
+
 
 <button id="scanBtn">
 📷 تشغيل الكاميرا
 </button>
+
 
 <input
 type="text"
 id="code"
 placeholder="أدخل كود الدعوة">
 
+
 <button id="checkBtn">
 تحقق
 </button>
 
+
 <div id="result"></div>
+
 
 </div>
 
+
+
+<div id="closedBox">
+
+<h2>
+🌹 شكرًا لحضوركم
+</h2>
+
+<p>
+انتهى وقت التحقق من الدعوات.
+</p>
+
+</div>
+
+
+</div>
+
+
+
 <script>
+
 const SCRIPT_URL="https://script.google.com/macros/s/AKfycbxwGjgxKtuOszqvnS-TpTUS-T0-IbfZf_GUCUhyN3HwDi3YwS3A3AzJk03AZcrnSQe3/exec";
+
 </script>
+
 
 <script src="script.js"></script>
 
+
 </body>
+
 </html>
