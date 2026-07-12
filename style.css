@@ -141,7 +141,8 @@ button:hover{
 
 /* الدخول المسبق */
 .warning{
-    color:#b26a00;
+    color:#c99700;
+    font-weight:bold;
 }
 
 /* الخطأ */
