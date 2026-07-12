@@ -54,3 +54,11 @@ button:hover{
     font-size:18px;
     font-weight:bold;
 }
+.invitation{
+    width:100%;
+    max-width:420px;
+    height:auto;
+    border-radius:15px;
+    display:block;
+    margin:0 auto 20px;
+}
