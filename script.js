@@ -1,5 +1,5 @@
 // وقت فتح التحقق
-const openTime = new Date("2026-08-16T08:01:00+03:00");
+const openTime = new Date("2026-08-16T15:00:00+03:00");
 
 // وقت إغلاق التحقق
 const closeTime = new Date("2026-08-18T04:00:00+03:00");
