@@ -58,7 +58,8 @@ try{
 
 const url=new URL(decodedText);
 
-code=url.searchParams.get("code");
+const params = new URLSearchParams(decodedText.split("?")[1]);
+code = params.get("code");
 
 }catch(e){
 
