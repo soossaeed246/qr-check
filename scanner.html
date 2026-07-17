@@ -3,22 +3,25 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 <title>ماسح الدعوات</title>
 
 <script src="https://unpkg.com/html5-qrcode"></script>
 
 <style>
 body{
-    font-family:Tahoma;
-    background:#111;
-    color:#fff;
-    text-align:center;
     margin:0;
     padding:20px;
+    background:#111;
+    color:#fff;
+    font-family:Tahoma;
+    text-align:center;
+}
+h2{
+    margin-bottom:20px;
 }
 #reader{
     width:340px;
+    max-width:100%;
     margin:auto;
 }
 #result{
@@ -27,7 +30,6 @@ body{
     font-weight:bold;
 }
 </style>
-
 </head>
 
 <body>
@@ -36,74 +38,46 @@ body{
 
 <div id="reader"></div>
 
-<div id="result">
-جاهز للمسح
-</div>
+<div id="result">جاهز للمسح</div>
 
 <script>
 
-const api="https://script.google.com/macros/s/AKfycbxwGjgxKtuOszqvnS-TpTUS-T0-IbfZf_GUCUhyN3HwDi3YwS3A3AzJk03AZcrnSQe3/exec";
+const api = "https://script.google.com/macros/s/AKfycbxwGjgxKtuOszqvnS-TpTUS-T0-IbfZf_GUCUhyN3HwDi3YwS3A3AzJk03AZcrnSQe3/exec";
 
-let reading=false;
+let reading = false;
 
 function success(decodedText){
 
-if(reading)return;
+    if(reading) return;
 
-reading=true;
+    reading = true;
 
-let code="";
+    let code = "";
 
-try{
+    try{
 
-const url=new URL(decodedText);
+        const url = new URL(decodedText);
+        code = url.searchParams.get("code");
 
-const params = new URLSearchParams(decodedText.split("?")[1]);
-code = params.get("code");
+    }catch(e){
 
-}catch(e){
+        code = decodedText;
 
-code=decodedText;
+    }
 
-}
+    document.getElementById("result").innerHTML="⏳ جاري التحقق...";
 
-fetch(api + "?action=checkIn&code=" + encodeURIComponent(code))
+    fetch(api + "?action=checkIn&code=" + encodeURIComponent(code),{
+        method:"GET",
+        redirect:"follow"
+    })
 
-.then(r=>r.json())
+    .then(response=>response.text())
 
-.then(data=>{
+    .then(text=>{
 
-if(data.status=="checked"){
+        console.log(text);
 
-document.getElementById("result").innerHTML="✅ تم تسجيل الدخول";
+        const data = JSON.parse(text);
 
-}else{
-
-document.getElementById("result").innerHTML="❌ الدعوة مستخدمة أو غير موجودة";
-
-}
-
-setTimeout(()=>{
-
-document.getElementById("result").innerHTML="جاهز للمسح";
-
-reading=false;
-
-},1500);
-
-});
-
-}
-
-const html5QrCode=new Html5Qrcode("reader");
-
-html5QrCode.start(
-{facingMode:"environment"},
-{fps:10,qrbox:250},
-success
-);
-
-</script>
-
-</body>
-</html>
+        if
