@@ -67,7 +67,7 @@ code=decodedText;
 
 }
 
-fetch(api+"?action=checkIn&code="+code)
+fetch(api + "?action=checkIn&code=" + encodeURIComponent(code))
 
 .then(r=>r.json())
 
